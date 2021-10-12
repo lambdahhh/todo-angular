@@ -72,7 +72,6 @@ export class TestData {
         {
             id: 7,
             title: 'Сделать доброе дело',
-            priority: TestData.priorities[1],
             completed: false,
             category: TestData.categories[3],
             date: new Date('2019-04-10')
