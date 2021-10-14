@@ -36,7 +36,7 @@ export class TestData {
             id: 2,
             title: 'Сходить за хлебом',
             priority: TestData.priorities[3],
-            completed: false,
+            completed: true,
             category: TestData.categories[2],
             date: new Date('2019-04-10')
         },
@@ -52,7 +52,7 @@ export class TestData {
             id: 4,
             title: 'Нарезать колбасу',
             priority: TestData.priorities[1],
-            completed: false,
+            completed: true,
             category: TestData.categories[1]
         },
         {
