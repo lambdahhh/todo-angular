@@ -7,15 +7,19 @@
             <div class="card-body table-responsive">
                 <table class="table table-hover">
                     <thead class="text-warning">
+                    <th></th>
                     <th>#</th>
-                    <th>Название</th>
-                    <th>Категория</th>
-                    <th>Приоритет</th>
-                    <th>Дата</th>
-                    <th>Статус</th>
+                    <th class="pointer" (click)="sortByTitle('title')">Название</th>
+                    <th class="pointer">Категория</th>
+                    <th class="pointer">Приоритет</th>
+                    <th class="pointer">Дата</th>
+                    <th class="pointer">Статус</th>
                     </thead>
                     <tbody>
                     <tr *ngFor="let task of tasks; let i = index" [class.completed]="task.completed">
+                        <td
+                            [style.background-color]="getPriorityColor(task)"
+                        ></td>
                         <td>{{i+1}}</td>
                         <td>{{task.title}}</td>
                         <td [class.novalue]="task.category == null">{{task.category != null ? task.category.title : 'Без категории'}}</td>

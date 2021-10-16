@@ -30,6 +30,22 @@ export class DataHandlerService {
         // return TestData.tasks;
     }
 
+    fillSortTasks(sortField: string) {
+        const tasks = TestData.tasks.sort(function (a, b) {
+            // @ts-ignore
+            if (a[sortField] > b[sortField]) {
+                return 1;
+            } else { // @ts-ignore
+                if (a[sortField] < b[sortField]) {
+                                return -1;
+                            }
+            }
+            return 0;
+        });
+
+        this.tasksSubject.next(tasks);
+    }
+
     fillTasksByCategory(category: Category) {
         const tasks = TestData.tasks.filter(task => task.category === category);
         this.tasksSubject.next(tasks);
