@@ -26,6 +26,10 @@ export class TasksComponent implements OnInit {
         this.dataHandler.fillSortTasks(sortField);
     }
 
+    sortByComplete(sortComplex: string, sortField: string) {
+        this.dataHandler.fillComplexSortTasks(sortComplex, sortField);
+    }
+
     getPriorityColor(task: Task): string {
         if (task.completed) {
             return 'green';
